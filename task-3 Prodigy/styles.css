@@ -1,0 +1,106 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #a2c2e2, #b0e57c);
+    color: #fff;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px; /* Increased font size */
+    font-weight: bold; /* Bold text */
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #e0e0e0;
+}
+
+#message {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Winning Line Styles */
+.winning-line {
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.6);
+    height: 6px;
+    width: 100%;
+    z-index: 10;
+}
+
+.line-horizontal {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.line-vertical {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.line-diagonal-1 {
+    top: 0;
+    left: 0;
+    width: 141%;
+    transform: rotate(45deg) translateY(-50%);
+    transform-origin: 0 0;
+}
+
+.line-diagonal-2 {
+    top: 0;
+    left: 0;
+    width: 141%;
+    transform: rotate(-45deg) translateY(-50%);
+    transform-origin: 100% 0;
+}
